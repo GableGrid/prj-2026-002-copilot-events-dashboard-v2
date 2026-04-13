@@ -10,5 +10,11 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_ProTooling = ["DevMode"]
 
+annotation PBI_QueryOrder = ["retail_sales_dataset"]
+
+ref table retail_sales_dataset
+ref table DateTableTemplate_e435e970-9474-4070-9afb-a65509c06096
+ref table LocalDateTable_3656709a-8f99-4c45-ae5a-9c234ecb1d6c
+
 ref cultureInfo en-US
 

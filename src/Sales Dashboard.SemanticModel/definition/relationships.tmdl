@@ -1,0 +1,5 @@
+relationship c1db791f-e56c-472f-bd2d-37a7021cd85f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: retail_sales_dataset.Date
+	toColumn: LocalDateTable_3656709a-8f99-4c45-ae5a-9c234ecb1d6c.Date
+
