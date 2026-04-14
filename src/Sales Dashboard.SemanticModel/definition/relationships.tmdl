@@ -1,5 +1,5 @@
-relationship c1db791f-e56c-472f-bd2d-37a7021cd85f
+relationship e76605d8-9be7-4893-8a83-79e31affd48b
 	joinOnDateBehavior: datePartOnly
-	fromColumn: retail_sales_dataset.Date
-	toColumn: LocalDateTable_3656709a-8f99-4c45-ae5a-9c234ecb1d6c.Date
+	fromColumn: 'retail_sales_dataset v2'.'Order Date'
+	toColumn: LocalDateTable_337b6d0f-9552-4004-88d0-33637f5e71ab.Date
 

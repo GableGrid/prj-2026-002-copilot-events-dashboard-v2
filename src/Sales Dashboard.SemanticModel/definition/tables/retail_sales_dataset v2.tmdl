@@ -1,0 +1,95 @@
+table 'retail_sales_dataset v2'
+	lineageTag: 34412e73-5959-4c34-b3c5-15903ae96772
+
+	column 'Order ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7bb4c23b-bdf0-49fe-8e45-b4aa14c686dc
+		summarizeBy: count
+		sourceColumn: Order ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 51fe1b84-bc88-4a95-acfe-254790f41c2d
+		summarizeBy: none
+		sourceColumn: Order Date
+
+		variation Variation
+			isDefault
+			relationship: e76605d8-9be7-4893-8a83-79e31affd48b
+			defaultHierarchy: LocalDateTable_337b6d0f-9552-4004-88d0-33637f5e71ab.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Region
+		dataType: string
+		lineageTag: 8b321e97-efd9-4ff0-beb6-e009b458a37e
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: dcb9599b-d128-4787-935a-9e6e84c8628a
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Name'
+		dataType: string
+		lineageTag: 80bf984a-1ca2-4966-9fc8-f8c9b32d644e
+		summarizeBy: none
+		sourceColumn: Product Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sales
+		dataType: int64
+		formatString: 0
+		lineageTag: f0b6d071-a2db-46c8-a5ea-3c32d46532c1
+		summarizeBy: sum
+		sourceColumn: Sales
+
+		annotation SummarizationSetBy = Automatic
+
+	column Profit
+		dataType: int64
+		formatString: 0
+		lineageTag: b6b6dfe2-5f6e-4935-96e7-0ab82239bb0e
+		summarizeBy: sum
+		sourceColumn: Profit
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 1b2fe626-d186-43ad-9e56-a10c95ef771a
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'retail_sales_dataset v2' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\LENOVO\Downloads\retail_sales_dataset v2.csv"),[Delimiter=",", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Order ID", Int64.Type}, {"Order Date", type date}, {"Region", type text}, {"Category", type text}, {"Product Name", type text}, {"Sales", type number}, {"Profit", type number}, {"Quantity", Int64.Type}}),
+				    #"Sorted Rows" = Table.Sort(#"Changed Type",{{"Profit", Order.Ascending}, {"Quantity", Order.Ascending}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Sorted Rows",{{"Profit", Int64.Type}, {"Sales", Int64.Type}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

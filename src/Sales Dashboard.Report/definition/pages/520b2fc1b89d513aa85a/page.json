@@ -1,8 +1,53 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "520b2fc1b89d513aa85a",
-  "displayName": "Page 1",
+  "displayName": " Overview (KPIs + trends)",
   "displayOption": "FitToPage",
-  "height": 720,
-  "width": 1280
+  "height": 742,
+  "width": 1200,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b4898fbc580ccb339e1c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "retail_sales_dataset v2"
+              }
+            },
+            "Property": "Sales"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      }
+    ]
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#212529'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
 }
