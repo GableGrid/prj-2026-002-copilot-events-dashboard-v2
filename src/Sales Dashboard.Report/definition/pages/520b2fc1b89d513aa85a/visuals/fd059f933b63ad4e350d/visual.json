@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "d5d7e88e9071376083a8",
+  "name": "fd059f933b63ad4e350d",
   "position": {
-    "x": 5.0579683131407265,
-    "y": 16.438397017707363,
-    "z": 1000,
-    "height": 50.579683131407265,
-    "width": 156.79701770736253,
-    "tabOrder": 1000
+    "x": 192.20279589934762,
+    "y": 41.728238583410992,
+    "z": 8001,
+    "height": 44.257222739981358,
+    "width": 154.26803355079215,
+    "tabOrder": 8001
   },
   "visual": {
     "visualType": "textbox",
@@ -19,9 +19,9 @@
               {
                 "textRuns": [
                   {
-                    "value": "Sales Dashboard",
+                    "value": " Overview",
                     "textStyle": {
-                      "fontFamily": "Segoe (Bold)",
+                      "fontFamily": "Tahoma",
                       "fontSize": "14pt",
                       "color": "#ffffff"
                     }

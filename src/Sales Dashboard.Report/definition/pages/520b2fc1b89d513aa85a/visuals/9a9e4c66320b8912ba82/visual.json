@@ -3,11 +3,11 @@
   "name": "9a9e4c66320b8912ba82",
   "position": {
     "x": 181.38997303137407,
-    "y": 105.48920417427428,
-    "z": 11,
-    "height": 324.186334779477,
-    "width": 418.09745556877,
-    "tabOrder": 11
+    "y": 96.484028208177691,
+    "z": 5000,
+    "height": 333.19151074557362,
+    "width": 356.34767751553625,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "barChart",
@@ -370,6 +370,13 @@
                   "Value": "true"
                 }
               }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Total Sales by Product Name'"
+                }
+              }
             }
           }
         }
@@ -570,39 +577,6 @@
         "type": "Advanced",
         "howCreated": "User",
         "isLockedInViewMode": true
-      },
-      {
-        "name": "82b973fd5c560d5dd27d",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "retail_sales_dataset v2"
-                  }
-                },
-                "Property": "Sales"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "95e5e8d64753de912944",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "retail_sales_dataset v2"
-              }
-            },
-            "Property": "Product Name"
-          }
-        },
-        "type": "Categorical"
       },
       {
         "name": "205f564e407d1205d3ca",
